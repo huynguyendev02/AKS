@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: adminns-sa
+  namespace: action
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: action
+  name: adminns-role
+rules:
+- apiGroups: ["*"]
+  resources: ["*"]
+  verbs: ["*"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: adminns-rolebinding
+  namespace: action
+subjects:
+- kind: ServiceAccount
+  name: adminns-sa
+  namespace: action
+roleRef:
+  kind: Role
+  name: adminns-role
+  apiGroup: rbac.authorization.k8s.io
+---

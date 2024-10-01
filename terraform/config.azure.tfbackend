@@ -1,0 +1,4 @@
+resource_group_name = "Azuredevops"
+storage_account_name = "udacityterraformsa"
+container_name = "terraform"
+key = "uda.terraform.tfstate"

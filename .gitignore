@@ -1,0 +1,10 @@
+creds
+temp
+**/*.tfstate
+**/*.exe
+# Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
